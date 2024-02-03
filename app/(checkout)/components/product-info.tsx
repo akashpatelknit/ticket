@@ -34,11 +34,11 @@ import { Button } from '@/components/ui/button';
 
 const ProductInfo = () => {
 	return (
-		<div className="  w-full mx-auto py-12 md:py-20 max-w-md ">
+		<div className="  w-full mx-auto pt-12 md:py-20 md:max-w-md ">
 			<div className="flex md:hidden pb-8">
 				<h1 className=" text-3xl font-semibold ml-4">Confirm & pay</h1>
 			</div>
-			<Card className=" max-w-sm rounded-xl ">
+			<Card className=" md:max-w-sm rounded-xl md:rounded-3xl ">
 				<div className=" p-3">
 					<div className=" w-full">
 						<Carousel className="w-full  mx-auto">

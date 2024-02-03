@@ -7,7 +7,7 @@ const FAQs = () => {
 	return (
 		<div className=" flex flex-col-reverse md:flex-row justify-between  gap-5">
 			<div className=" w-full max-w-lg">
-				<div className=" py-10">
+				<div className=" py-10 hidden md:flex">
 					<Heading
 						title="Frequently asked questions"
 						description="Here are some of our most asked questions."
@@ -18,7 +18,9 @@ const FAQs = () => {
 						<p className=" pb-5 font-semibold">
 							Still need help? <br /> We are here for you.
 						</p>
-						<Button className="">Chat with us</Button>
+						<Button className=" rounded-xl p-5 py-4">
+							Chat with us
+						</Button>
 					</div>
 					<div className=" relative  aspect-[2/1] flex items-center  justify-center w-[50%]">
 						<Image
@@ -31,6 +33,12 @@ const FAQs = () => {
 				</div>
 			</div>
 			<div className=" w-full max-w-3xl">
+				<div className=" py-5 flex md:hidden">
+					<Heading
+						title="Frequently asked questions"
+						description="Here are some of our most asked questions."
+					/>
+				</div>
 				<FAQQuestion />
 			</div>
 		</div>

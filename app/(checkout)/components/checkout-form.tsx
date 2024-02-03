@@ -84,9 +84,9 @@ const CheckoutForm = () => {
 						name="name"
 						render={({ field }) => (
 							<FormItem>
-								<FormControl className=" h-16 rounded-2xl text-lg ">
+								<FormControl className=" h-12 md:h-14 rounded-xl md:rounded-2xl text-sm md:text-[1rem] ">
 									<Input
-										placeholder="Full name*"
+										placeholder="Full Name *"
 										{...field}
 									/>
 								</FormControl>
@@ -105,7 +105,7 @@ const CheckoutForm = () => {
 										value={field.value}
 										defaultValue={field.value}
 									>
-										<FormControl className=" h-16 rounded-2xl text-lg ">
+										<FormControl className=" h-12 md:h-14 rounded-xl md:rounded-2xl text-sm md:text-[1rem]">
 											<SelectTrigger>
 												<SelectValue
 													defaultValue={field.value}
@@ -133,7 +133,7 @@ const CheckoutForm = () => {
 							name="phone"
 							render={({ field }) => (
 								<FormItem className="  pt-8 md:py-0">
-									<FormControl className=" h-16 rounded-2xl text-lg ">
+									<FormControl className=" h-12 md:h-14 rounded-xl md:rounded-2xl text-sm md:text-[1rem]">
 										<Input
 											placeholder="Phone number *"
 											{...field}
@@ -148,7 +148,7 @@ const CheckoutForm = () => {
 							name="email"
 							render={({ field }) => (
 								<FormItem className="  pt-8 md:py-0">
-									<FormControl className=" h-16 rounded-2xl text-lg ">
+									<FormControl className=" h-12 md:h-14 rounded-xl md:rounded-2xl text-sm md:text-[1rem]">
 										<Input
 											type="text"
 											placeholder="Email *"
@@ -164,7 +164,7 @@ const CheckoutForm = () => {
 							name="confirmEmail"
 							render={({ field }) => (
 								<FormItem className="  pt-8 md:py-0">
-									<FormControl className=" h-16 rounded-2xl text-lg ">
+									<FormControl className=" h-12 md:h-14 rounded-xl md:rounded-2xl text-sm md:text-[1rem]">
 										<Input
 											type="text"
 											placeholder="Confirm email *"
@@ -179,12 +179,12 @@ const CheckoutForm = () => {
 				</form>
 			</Form>
 
-			<Separator className="my-10" />
+			<Separator className="my-5" />
 
-			<div className=" py-10 pt-16">
+			<div className=" py-10 pt-5 md:pt-16">
 				<Heading
 					title="Additional information"
-					description="We need a few more details to complete your reservation"
+					description="We need a few more details to complete your a reservation."
 				/>
 			</div>
 
@@ -196,7 +196,7 @@ const CheckoutForm = () => {
 							name="label"
 							render={({ field }) => (
 								<FormItem>
-									<FormControl className=" h-16 rounded-2xl text-lg ">
+									<FormControl className=" h-12 md:h-14 rounded-xl md:rounded-2xl text-sm md:text-[1rem]">
 										<Input
 											type="text"
 											placeholder="Input label *"
@@ -217,7 +217,7 @@ const CheckoutForm = () => {
 										value={field.value}
 										defaultValue={field.value}
 									>
-										<FormControl className=" h-16 rounded-2xl text-lg ">
+										<FormControl className=" h-12 md:h-14 rounded-xl md:rounded-2xl text-sm md:text-[1rem]">
 											<SelectTrigger>
 												<SelectValue
 													defaultValue={field.value}
@@ -252,7 +252,7 @@ const CheckoutForm = () => {
 									value={field.value}
 									defaultValue={field.value}
 								>
-									<FormControl className=" h-16 rounded-2xl text-lg ">
+									<FormControl className=" h-12 md:h-14 rounded-xl md:rounded-2xl text-sm md:text-[1rem]">
 										<SelectTrigger>
 											<SelectValue
 												defaultValue={field.value}

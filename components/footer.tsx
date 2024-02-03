@@ -5,17 +5,17 @@ import Link from 'next/link';
 
 const Footer = () => {
 	return (
-		<div className="  bg-black mt-10 ">
+		<div className="  bg-black mt-10 pt-20 ">
 			<Container>
 				<div className="flex items-center h-[100%]">
 					<h1 className=" text-white text-6xl font-bold pt-20 pb-10">
-						ticket
+						tickete
 					</h1>
 				</div>
 			</Container>
-			<Separator />
+			<Separator className=' bg-gray-700 ' />
 			<Container>
-				<div className="flex items-center h-[100%] text-gray-500  font-semibold gap-5 py-3 flex-wrap">
+				<div className="flex items-center h-[100%] text-gray-500  font-semibold gap-5 pt-10 pb-5 flex-wrap">
 					<span className="hidden md:flex">Made with ❤️</span>
 					<Link href="/about">• Privacy policy</Link>
 					<Link href="/about">• Terms and usage</Link>

@@ -4,7 +4,7 @@ import * as z from 'zod';
 
 import Container from '@/components/ui/container';
 import Heading from '@/components/ui/heading';
-import { AlertCircle, CreditCard, Lock, PiggyBank } from 'lucide-react';
+import { AlertCircle, CreditCard, Lock, PiggyBank, Trophy } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -22,6 +22,8 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import Image from 'next/image';
+import { useState } from 'react';
+import { cn } from '@/lib/utils';
 
 const formSchema = z.object({
 	name: z.string().min(1),
@@ -33,6 +35,12 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 const CardDetail = () => {
+	const [selected, setSelected] = useState<boolean>(false);
+
+	const onCardSelect = () => {
+		setSelected(!selected);
+		console.log(selected);
+	};
 	const defaultValues = {
 		name: '',
 		cardNumber: '',
@@ -56,7 +64,11 @@ const CardDetail = () => {
 			</div>
 
 			{/* Card Details Form */}
-			<Card className=" p-5 rounded-2xl">
+			<Card
+				className={`p-5 rounded-2xl ${
+					selected ? 'border-black border-2' : ''
+				}`}
+			>
 				<div className=" flex items-center justify-between py-5">
 					<div className=" flex items-center gap-3">
 						<Card className=" p-2 h-5 flex items-center rounded-md">
@@ -65,6 +77,20 @@ const CardDetail = () => {
 						<span className=" font-semibold">
 							Credit & debit card
 						</span>
+					</div>
+					<div
+						className={`${selected === true ? 'flex' : 'hidden'}`}
+						onClick={onCardSelect}
+					>
+						<div className=" h-6 w-6 rounded-full bg-black relative cursor-pointer">
+							<div className=" h-3 w-3 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+						</div>
+					</div>
+					<div
+						className={`${selected === true ? 'hidden' : 'flex'}`}
+						onClick={onCardSelect}
+					>
+						<div className=" h-6 w-6 rounded-full border-[3px] border-gray-500 relative cursor-pointer"></div>
 					</div>
 				</div>
 
@@ -90,7 +116,7 @@ const CardDetail = () => {
 					</Card>
 				</div>
 
-				<Separator className=" my-5" />
+				<Separator className=" my-5 flex md:hidden" />
 
 				{/* CArd Details Form */}
 				<Form {...form}>
@@ -101,7 +127,7 @@ const CardDetail = () => {
 								name="name"
 								render={({ field }) => (
 									<FormItem>
-										<FormControl className=" h-16 rounded-2xl text-lg ">
+										<FormControl className=" h-12 md:h-14 rounded-xl md:rounded-2xl text-sm md:text-[1rem]">
 											<Input
 												type="text"
 												placeholder="Name on card *"
@@ -117,7 +143,7 @@ const CardDetail = () => {
 								name="cardNumber"
 								render={({ field }) => (
 									<FormItem>
-										<FormControl className=" h-16 rounded-2xl text-lg ">
+										<FormControl className=" h-12 md:h-14 rounded-xl md:rounded-2xl text-sm md:text-[1rem]">
 											<Input
 												type="text"
 												placeholder="Card number *"
@@ -133,7 +159,7 @@ const CardDetail = () => {
 								name="expiry"
 								render={({ field }) => (
 									<FormItem>
-										<FormControl className=" h-16 rounded-2xl text-lg ">
+										<FormControl className="  h-12 md:h-14 rounded-xl md:rounded-2xl text-sm md:text-[1rem]">
 											<Input
 												type="text"
 												placeholder="Expiry date *"
@@ -149,7 +175,7 @@ const CardDetail = () => {
 								name="cvv"
 								render={({ field }) => (
 									<FormItem>
-										<FormControl className=" h-16 rounded-2xl text-lg ">
+										<FormControl className="  h-12 md:h-14 rounded-xl md:rounded-2xl text-sm md:text-[1rem]">
 											<Input
 												type="text"
 												placeholder="<CVV/>CVC> *"
@@ -164,11 +190,11 @@ const CardDetail = () => {
 					</form>
 				</Form>
 
-				<Separator className=" my-5" />
+				<Separator className=" my-5 md:mt-8" />
 
-				<div className=" md:p-3 pt-3">
+				<div className=" md:p-3 pt-3 md:pt-0">
 					<div className=" flex flex-col-reverse items-start md:flex-row justify-between md:items-center gap-2 md:gap-0">
-						<span className="font-semibold">
+						<span className="font-semibold text-lg">
 							Total payable $XXX
 						</span>
 
@@ -196,14 +222,14 @@ const CardDetail = () => {
 						<span>
 							By clicking {'confirf & pay'} ,you agree to{' '}
 						</span>
-						<Link href="/" className=" underline text-blue-400">
+						<Link href="/" className=" underline text-blue-600">
 							Ticket general terms and condition and cancellation
 							policy.
 						</Link>
 					</div>
 
 					<Button
-						className=" rounded-xl flex items-center gap-3 px-10"
+						className=" rounded-xl flex items-center gap-3 px-10 w-full text-lg md:text-[1rem]"
 						size="xl"
 					>
 						<Lock /> Confirm & pay
@@ -212,7 +238,7 @@ const CardDetail = () => {
 			</Card>
 
 			{/* Comming Soon payment methods*/}
-			<Card className="p-7 my-5 rounded-2xl bg-[#F9F9FB] flex justify-between">
+			<Card className="p-7 my-5 rounded-2xl bg-[#F9F9FB] flex justify-between opacity-60">
 				<div className="flex items-center gap-2">
 					<div className="flex items-center gap-0 bg-gray-200 rounded-md p-[1px] px-1">
 						<Image
@@ -229,7 +255,7 @@ const CardDetail = () => {
 				</div>
 				<div className="h-6 w-6 rounded-full bg-gray-200"></div>
 			</Card>
-			<Card className="p-7 my-3 rounded-2xl bg-[#F9F9FB] flex justify-between">
+			<Card className="p-7 my-3 rounded-2xl bg-[#F9F9FB] flex justify-between opacity-60">
 				<div className="flex items-center gap-2">
 					<div className="flex items-center gap-0 bg-gray-200 rounded-md p-[1px] px-1">
 						<Image
@@ -251,16 +277,27 @@ const CardDetail = () => {
 
 			{/* Total payable */}
 			<div className=" py-5">
+				<Badge
+					variant="outline"
+					className="bg-red-100 flex items-center gap-1 w-fit my-2 p-0 px-2 py-1 border-2"
+				>
+					<PiggyBank className="h-4 w-4" />
+					<span className="text-xs text-green-500 font-normal">
+						You saved {'<price>'}
+					</span>
+				</Badge>
 				<Heading title="Total Payable : $XXX" description="" />
 			</div>
 
 			{/* You will be charged in AED */}
-			<Card className="p-7  rounded-2xl">
+			<Card className="p-3  rounded-2xl">
 				<div>
 					<div className=" font-semibold flex  gap-3 items-start">
 						<AlertCircle className="h-10 w-10 md:w-5" />
 						<div className="pt-2">
-							<span>You will charged in AED</span>
+							<span className=" text-sm">
+								You will charged in AED
+							</span>
 							<br />
 							<span className=" text-gray-500 font-normal text-sm">
 								The price showen here is in US Doller (USD) as
