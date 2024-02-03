@@ -194,7 +194,7 @@ const CardDetail = () => {
 					</div>
 
 					<div className=" py-5 text-[13px]  text-gray-500">
-						<span>By clicking "confirf & pay" ,you agree to </span>
+						<span>By clicking {"confirf & pay"} ,you agree to </span>
 						<Link href="/" className=" underline text-blue-400">
 							Ticket general terms and condition and cancellation
 							policy.
