@@ -58,22 +58,19 @@ const CheckoutForm = () => {
 				<h1 className=" text-6xl font-semibold">Confirm & pay</h1>
 			</div>
 
-			<Card className=" rounded-3xl">
-				<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-					<CardTitle className="font-medium text-[18px]">
+			<Card className=" rounded-xl p-0 h-28">
+				<CardHeader className="flex flex-row items-center justify-between space-y-0 pb-1">
+					<CardTitle className="font-semibold text-[15px]">
 						Free cancellation
 					</CardTitle>
 					<AlertCircle className="h-4 w-4 text-muted-foreground" />
 				</CardHeader>
-				<CardContent>
-					<div>
-						Tickets can be cancelled for free within 24 hours of
-						booking
-					</div>
+				<CardContent className="text-sm text-gray-500">
+					Tickets can be cancelled by 13th <br /> December, 2022.
 				</CardContent>
 			</Card>
-
-			<div className=" py-10 pt-16">
+			<Separator className="my-6" />
+			<div className=" py-10 pt-5 md:pt-16">
 				<Heading
 					title="Enter your details"
 					description="We will be sending your ticket to the details below. Booking for a friend? Add their details"
@@ -113,7 +110,6 @@ const CheckoutForm = () => {
 												<SelectValue
 													defaultValue={field.value}
 													placeholder="Country code *"
-													
 												/>
 											</SelectTrigger>
 										</FormControl>

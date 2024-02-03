@@ -166,15 +166,15 @@ const CardDetail = () => {
 
 				<Separator className=" my-5" />
 
-				<div className=" p-3 pt-3">
-					<div className=" flex justify-between">
-						<span className=" text-sm font-semibold">
+				<div className=" md:p-3 pt-3">
+					<div className=" flex flex-col-reverse items-start md:flex-row justify-between md:items-center gap-2 md:gap-0">
+						<span className="font-semibold">
 							Total payable $XXX
 						</span>
 
 						<Badge
 							variant="outline"
-							className="bg-[#299764] flex items-center gap-1 w-fit my-2 py-1  px-2"
+							className="bg-[#299764] flex items-center gap-1 w-fit px-2"
 						>
 							<PiggyBank className="h-4 w-4 text-white" />
 							<span className="text-xs text-white font-normal">
@@ -182,7 +182,6 @@ const CardDetail = () => {
 							</span>
 						</Badge>
 					</div>
-
 					<div className=" flex items-center py-3 text-xs font-semibold text-gray-500">
 						<Link
 							href="/"
@@ -194,7 +193,9 @@ const CardDetail = () => {
 					</div>
 
 					<div className=" py-5 text-[13px]  text-gray-500">
-						<span>By clicking {"confirf & pay"} ,you agree to </span>
+						<span>
+							By clicking {'confirf & pay'} ,you agree to{' '}
+						</span>
 						<Link href="/" className=" underline text-blue-400">
 							Ticket general terms and condition and cancellation
 							policy.
