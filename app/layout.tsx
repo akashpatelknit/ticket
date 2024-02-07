@@ -1,9 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Open_Sans } from 'next/font/google';
 import './globals.css';
 import Footer from '@/components/footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const openSans = Open_Sans({
+	subsets: ['latin'],
+	display: 'swap',
+});
+
 
 export const metadata: Metadata = {
 	title: 'Tickete',
@@ -17,7 +21,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body className={openSans.className}>
 				{children}
 				<Footer />
 			</body>
